@@ -16,19 +16,21 @@ metadata:
 marketplace-forge is the single source of truth for **packaging skills and
 agents as marketplace plugins** — the distribution layer on top of
 skill-forge's authoring layer. Where `skill-forge` governs how to *create* a
-multi-agent skill, `marketplace-forge` governs how to *ship* it across Claude
-Code, Codex, Cursor, and Hermes.
+multi-agent skill, `marketplace-forge` governs how to *ship* it — and how to
+*stand up the marketplace that serves it* — across Claude Code, Codex, Cursor,
+and Hermes.
 
 It does not re-teach the architecture or the dependency model — those are
-`skill-forge`'s job. It provides the per-harness packaging references and the
-publish workflow.
+`skill-forge`'s job. It provides the per-harness packaging references, the
+per-platform marketplace-creation minimums, and the publish workflow.
 
 ## When to Use
 
 - Packaging an existing skill + agent set as an installable plugin.
 - Adding a per-harness manifest (`.claude-plugin/`, `.codex-plugin/`) to a plugin.
-- Publishing a marketplace catalog (`marketplace.json`) that lists plugins.
-- Answering "what does plugin X's manifest need for harness Y?"
+- Creating or registering a marketplace for a platform.
+- Answering "what does plugin X's manifest need for harness Y?" or "what's the
+  minimum to register a marketplace for platform Z?"
 
 Don't use for: authoring the skill/agent content itself (use `skill-forge`);
 or a single Hermes-only skill with no plugin packaging.
@@ -37,6 +39,8 @@ or a single Hermes-only skill with no plugin packaging.
 
 | Document | Governs |
 |---|---|
+| `references/marketplace-registration.md` | per-platform create + minimum registration requirements |
+| `references/MARKETPLACE-INFRASTRUCTURE.md` | the full Claude Code registry.json infrastructure guide (copied verbatim) |
 | `references/claude-marketplace.md` | Claude Code `.claude-plugin/` manifest + `marketplace.json` |
 | `references/codex-marketplace.md` | Codex `.codex-plugin/` manifest + `marketplace.json` |
 | `references/cursor-marketplace.md` | Cursor `.cursor/` config dirs |
@@ -55,6 +59,21 @@ The D1–D5 dependency model and the thin-adapter rule are defined in
 - **Per-harness manifest is the divergence point.** Claude/Codex use a
   `plugin.json`; Cursor uses `.cursor/` dirs; Hermes uses frontmatter only.
 - **One marketplace catalog per repo** lists every installable plugin.
+
+## Creating a marketplace per platform
+
+"Create" ships the artifacts; "register" makes a consumer able to add it. The
+minimums differ per platform — `references/marketplace-registration.md` is the
+full matrix. In brief:
+
+- **Claude Code** — a repo with a catalog: `.claude-plugin/marketplace.json`
+  (live-repo format) or the fuller `docs/registries/nuget/registry.json`
+  (infra-guide format); register via `/plugin marketplace add owner/repo`.
+- **Codex** — `marketplace.json` + `.codex-plugin/plugin.json` per plugin;
+  register via `codex plugin marketplace add owner/repo`.
+- **Cursor** — no marketplace; a `.cursor/` tree in-repo, no registration.
+- **Hermes** — no marketplace manifest; the registry layer is sc-dolt (package
+  + curator review).
 
 ## Procedure — package a plugin
 
@@ -76,6 +95,10 @@ The D1–D5 dependency model and the thin-adapter rule are defined in
 2. **Omitting `source`** in the catalog — the plugin won't resolve.
 3. **Version drift** between `plugin.json` and SKILL.md frontmatter.
 4. **Assuming Cursor has a `plugin.json`** — it reads `.cursor/` dirs, no manifest.
+5. **Mixing the two Claude Code models** — `.claude-plugin/marketplace.json`
+   (live repos) vs `docs/registries/nuget/registry.json` (infra guide). Pick
+   one per marketplace; shipping both risks the discovery protocol resolving
+   the wrong one.
 
 ## Verification
 
@@ -84,3 +107,5 @@ The D1–D5 dependency model and the thin-adapter rule are defined in
 - [ ] `marketplace.json` lists the plugin; `source` resolves to the plugin dir
 - [ ] `version` in lockstep across all manifests + frontmatter
 - [ ] Each target harness installs AND loads the plugin once
+- [ ] (If standing up a marketplace) the per-platform create/register minimums
+      in `references/marketplace-registration.md` are met
