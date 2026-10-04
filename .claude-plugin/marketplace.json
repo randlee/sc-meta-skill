@@ -1,19 +1,29 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "sc-meta-skill",
-  "description": "skill-forge: create multi-agent skills following the skills/agents architecture (Claude Code / Codex / Cursor / Hermes), from a curated reference library.",
+  "description": "The forge marketplace: skill-forge (multi-agent skill creation) + marketplace-forge (plugin packaging), for Claude Code / Codex / Cursor / Hermes.",
   "owner": {
     "name": "randlee"
   },
   "plugins": [
     {
-      "name": "sc-meta-skill",
-      "description": "skill-forge: create multi-agent skills following the skills/agents architecture, with the D1-D5 dependency model and a dated harness-capability matrix.",
+      "name": "skill-forge",
+      "description": "Create multi-agent skills following the skills/agents architecture, from a curated reference library.",
       "author": {
         "name": "randlee"
       },
       "category": "workflow",
-      "source": "./plugins/sc-meta-skill",
+      "source": "./plugins/skill-forge",
+      "homepage": "https://github.com/randlee/sc-meta-skill"
+    },
+    {
+      "name": "marketplace-forge",
+      "description": "Package skills and agents as marketplace plugins across Claude Code / Codex / Cursor / Hermes.",
+      "author": {
+        "name": "randlee"
+      },
+      "category": "workflow",
+      "source": "./plugins/marketplace-forge",
       "homepage": "https://github.com/randlee/sc-meta-skill"
     }
   ]

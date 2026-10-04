@@ -1,5 +1,5 @@
 {
-  "name": "sc-meta-skill",
+  "name": "skill-forge",
   "version": "0.1.0",
   "description": "skill-forge: create multi-agent skills following the skills/agents architecture, across Claude Code / Codex / Cursor / Hermes.",
   "author": {

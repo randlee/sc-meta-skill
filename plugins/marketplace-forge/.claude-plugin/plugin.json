@@ -1,0 +1,23 @@
+{
+  "name": "marketplace-forge",
+  "description": "Package skills and agents as marketplace plugins across Claude Code / Codex / Cursor / Hermes.",
+  "version": "0.1.0",
+  "author": {
+    "name": "randlee",
+    "url": "https://github.com/randlee"
+  },
+  "repository": "https://github.com/randlee/sc-meta-skill",
+  "license": "MIT",
+  "homepage": "https://github.com/randlee/sc-meta-skill",
+  "keywords": [
+    "marketplace-forge",
+    "marketplace",
+    "plugins",
+    "packaging",
+    "claude",
+    "codex",
+    "cursor",
+    "hermes"
+  ],
+  "skills": "./skills/"
+}

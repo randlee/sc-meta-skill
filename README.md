@@ -1,38 +1,40 @@
-# sc-meta-skill — skill-forge
+# sc-meta-skill — the forge marketplace
 
-The single source of truth for **multi-agent skill creation**: building skills
-that orchestrate one or more agents, following the skills/agents architecture
-copied from `synaptic-canvas`. Skills built here land in
-`synaptic-canvas-dolt` as versioned registry units.
+A marketplace containing two forge plugins for the Synaptic Canvas skill
+pipeline:
 
-The primary skill is **`skill-forge`**: its `SKILL.md` is a table of contents
-over a reference library, anchored by the skills/agents architecture
-guidelines, so skills are built from canonical documents rather than re-derived
-each time.
-
-## Reference library
-
-| Document | Role | Governs |
+| Plugin | For | Reference library |
 |---|---|---|
-| `skills/skill-forge/references/claude-code-skills-agents-guidelines.md` | **primary** | two-tier skill/agent architecture (v0.7, copied verbatim) |
-| `skills/skill-forge/references/dependency-model.md` | supplement | the five dependency classes (D1–D5) |
-| `skills/skill-forge/references/harness-capability-matrix.md` | supplement | dated harness capabilities (drift guardrail) |
+| **skill-forge** | multi-agent skill *creation* (authoring) | skills/agents architecture guidelines (v0.7), dependency model, harness-capability matrix |
+| **marketplace-forge** | plugin *packaging* (distribution) | claude-marketplace, codex-marketplace, cursor-marketplace, hermes-marketplace |
+
+Together they break the loop: **skill-forge** builds skills to a canonical
+architecture, **marketplace-forge** ships them as installable plugins across
+Claude Code / Codex / Cursor / Hermes, and both land in
+`synaptic-canvas-dolt` as versioned registry units.
 
 ## Structure
 
 ```
 sc-meta-skill/
-  .claude-plugin/marketplace.json        # marketplace catalog (Claude Code + Codex)
-  plugins/sc-meta-skill/
-    .claude-plugin/plugin.json           # Claude Code manifest
-    .codex-plugin/plugin.json            # Codex manifest
-    skills/skill-forge/                  # CANONICAL body + reference library
+  .claude-plugin/marketplace.json        # catalog: [skill-forge, marketplace-forge]
+  plugins/skill-forge/                   # plugin 1 — authoring
+    .claude-plugin/plugin.json
+    .codex-plugin/plugin.json
+    skills/skill-forge/
       SKILL.md
-      references/…/
-    .cursor/skills/skill-forge/SKILL.md  # Cursor thin adapter → canonical body
+      references/  (guidelines, dependency-model, harness-capability-matrix)
+    .cursor/skills/skill-forge/SKILL.md
+  plugins/marketplace-forge/             # plugin 2 — packaging
+    .claude-plugin/plugin.json
+    .codex-plugin/plugin.json
+    skills/marketplace-forge/
+      SKILL.md
+      references/  (claude/codex/cursor/hermes marketplace)
+    .cursor/skills/marketplace-forge/SKILL.md
 ```
 
-One body, N thin adapters. The knowledge lives in `skills/skill-forge/`
+One body, N thin adapters: the knowledge lives in each skill's `SKILL.md`
 exactly once; every harness adapter is frontmatter plus a pointer — never a
 forked copy.
 
@@ -42,4 +44,4 @@ forked copy.
 - **Codex:** `codex plugin marketplace add randlee/sc-meta-skill`
 - **Cursor:** add the repo (or `.cursor/` tree) to the project; Cursor loads
   `.cursor/skills/` natively.
-- **Hermes:** install when complete (see `skills/skill-forge/SKILL.md`).
+- **Hermes:** install when complete.

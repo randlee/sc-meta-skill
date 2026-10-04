@@ -1,0 +1,36 @@
+{
+  "name": "marketplace-forge",
+  "version": "0.1.0",
+  "description": "Package skills and agents as marketplace plugins across Claude Code / Codex / Cursor / Hermes.",
+  "author": {
+    "name": "randlee",
+    "url": "https://github.com/randlee"
+  },
+  "homepage": "https://github.com/randlee/sc-meta-skill",
+  "repository": "https://github.com/randlee/sc-meta-skill",
+  "license": "MIT",
+  "keywords": [
+    "marketplace-forge",
+    "marketplace",
+    "plugins",
+    "packaging",
+    "claude",
+    "codex",
+    "cursor",
+    "hermes"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Marketplace Forge",
+    "shortDescription": "Package skills and agents as marketplace plugins.",
+    "longDescription": "Source of truth for packaging skills and agents as installable marketplace plugins across Claude Code, Codex, Cursor, and Hermes. Provides a per-marketplace reference library: claude-marketplace, codex-marketplace, cursor-marketplace, and hermes-marketplace.",
+    "developerName": "randlee",
+    "category": "Developer Tools",
+    "capabilities": ["Skills"],
+    "websiteURL": "https://github.com/randlee/sc-meta-skill",
+    "defaultPrompt": [
+      "Use marketplace-forge to package a skill as a marketplace plugin."
+    ],
+    "brandColor": "#4F7CAC"
+  }
+}
