@@ -1,0 +1,23 @@
+{
+  "name": "sc-meta-skill",
+  "description": "Author cross-harness marketplace plugins (Claude Code / Codex / Cursor / Hermes) with explicit dependency contracts and a dated harness-capability matrix.",
+  "version": "0.1.0",
+  "author": {
+    "name": "randlee",
+    "url": "https://github.com/randlee"
+  },
+  "repository": "https://github.com/randlee/sc-meta-skill",
+  "license": "MIT",
+  "homepage": "https://github.com/randlee/sc-meta-skill",
+  "keywords": [
+    "plugins",
+    "marketplace",
+    "dependencies",
+    "cross-harness",
+    "claude",
+    "codex",
+    "cursor",
+    "hermes"
+  ],
+  "skills": "./skills/"
+}

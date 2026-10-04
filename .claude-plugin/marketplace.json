@@ -1,0 +1,20 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "sc-meta-skill",
+  "description": "Source of truth for authoring cross-harness marketplace plugins with dependency contracts (Claude Code / Codex / Cursor / Hermes).",
+  "owner": {
+    "name": "randlee"
+  },
+  "plugins": [
+    {
+      "name": "sc-meta-skill",
+      "description": "marketplace-plugin-authoring: author cross-harness plugins with explicit D1-D5 dependency contracts and a dated harness-capability matrix.",
+      "author": {
+        "name": "randlee"
+      },
+      "category": "workflow",
+      "source": "./plugins/sc-meta-skill",
+      "homepage": "https://github.com/randlee/sc-meta-skill"
+    }
+  ]
+}

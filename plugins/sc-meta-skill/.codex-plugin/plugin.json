@@ -1,0 +1,35 @@
+{
+  "name": "sc-meta-skill",
+  "version": "0.1.0",
+  "description": "Author cross-harness marketplace plugins with explicit dependency contracts and a dated harness-capability matrix.",
+  "author": {
+    "name": "randlee",
+    "url": "https://github.com/randlee"
+  },
+  "homepage": "https://github.com/randlee/sc-meta-skill",
+  "repository": "https://github.com/randlee/sc-meta-skill",
+  "license": "MIT",
+  "keywords": [
+    "plugins",
+    "marketplace",
+    "dependencies",
+    "cross-harness",
+    "claude",
+    "codex",
+    "cursor"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Marketplace Plugin Authoring",
+    "shortDescription": "Author cross-harness plugins with dependency contracts.",
+    "longDescription": "Source of truth for building marketplace plugins for Claude Code, Codex, and Cursor. Declares the D1-D5 dependency model (skill, agent, artifact, binding, harness capability) and a dated harness-capability matrix so plugins never hardcode a stale harness assumption.",
+    "developerName": "randlee",
+    "category": "Developer Tools",
+    "capabilities": ["Skills"],
+    "websiteURL": "https://github.com/randlee/sc-meta-skill",
+    "defaultPrompt": [
+      "Use marketplace-plugin-authoring to author a cross-harness marketplace plugin."
+    ],
+    "brandColor": "#4F7CAC"
+  }
+}
