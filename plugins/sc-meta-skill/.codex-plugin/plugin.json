@@ -1,7 +1,7 @@
 {
   "name": "sc-meta-skill",
   "version": "0.1.0",
-  "description": "skill-forge: forge cross-agent skills and agents across Claude Code / Codex / Cursor / Hermes, from a curated reference library.",
+  "description": "skill-forge: create multi-agent skills following the skills/agents architecture, across Claude Code / Codex / Cursor / Hermes.",
   "author": {
     "name": "randlee",
     "url": "https://github.com/randlee"
@@ -13,6 +13,7 @@
     "skill-forge",
     "skills",
     "agents",
+    "multi-agent",
     "plugins",
     "marketplace",
     "cross-harness",
@@ -21,14 +22,14 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Skill Forge",
-    "shortDescription": "Forge cross-agent skills and agents from a reference library.",
-    "longDescription": "Source of truth for forging skills and agents that load across Claude Code, Codex, Cursor, and Hermes. Provides access to a curated reference library: the v0.7 skills/agents architecture guidelines, the D1-D5 dependency model, and a dated harness-capability matrix so no skill ever hardcodes a stale harness assumption.",
+    "shortDescription": "Create multi-agent skills from the architecture guidelines.",
+    "longDescription": "Source of truth for multi-agent skill creation: building skills that orchestrate one or more agents, following the skills/agents architecture copied from synaptic-canvas. Provides access to a curated reference library: the v0.7 architecture guidelines, the D1-D5 dependency model, and a dated harness-capability matrix so no skill ever hardcodes a stale harness assumption.",
     "developerName": "randlee",
     "category": "Developer Tools",
     "capabilities": ["Skills"],
     "websiteURL": "https://github.com/randlee/sc-meta-skill",
     "defaultPrompt": [
-      "Use skill-forge to forge a cross-agent skill or agent from the reference library."
+      "Use skill-forge to create a multi-agent skill following the architecture guidelines."
     ],
     "brandColor": "#4F7CAC"
   }

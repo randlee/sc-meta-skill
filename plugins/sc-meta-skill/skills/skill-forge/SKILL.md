@@ -1,22 +1,24 @@
 ---
 name: skill-forge
-description: "Build cross-agent skills and agents from reference docs."
+description: "Create multi-agent skills from the architecture guidelines."
 version: 0.1.0
 author: skillrx
 license: MIT
 platforms: [macos]
 metadata:
   hermes:
-    tags: [skill-forge, skills, agents, plugins, marketplace, cross-harness, references, sc-dolt]
+    tags: [skill-forge, skills, agents, multi-agent, plugins, marketplace, cross-harness, references, sc-dolt]
     related_skills: [agent-invocation, portability-patterns, skill-management, hermes-agent-skill-authoring]
 ---
 
 # Skill Forge
 
-skill-forge is the single source of truth for **forging cross-agent skills
-and agents** — packages that load across Claude Code, Codex, Cursor, and
-Hermes, with explicit dependencies between their parts. It is also the
-**curator of the reference library** those skills are built from.
+skill-forge is the single source of truth for **multi-agent skill creation**:
+building skills that orchestrate one or more agents, following the
+skills/agents architecture in
+`references/claude-code-skills-agents-guidelines.md` (copied verbatim from
+synaptic-canvas). It is also the **curator of the reference library** those
+skills are built from.
 
 It does not re-teach SKILL.md format (`hermes-agent-skill-authoring`) or the
 agent-file / Pydantic sidecar contract (`agent-invocation`,
@@ -24,7 +26,7 @@ agent-file / Pydantic sidecar contract (`agent-invocation`,
 
 ## When to Use
 
-- Forging a new skill, agent, or plugin for any harness (Claude Code / Codex / Cursor / Hermes).
+- Creating a multi-agent skill — a skill that orchestrates agents (the two-tier skill/agent architecture).
 - Adding a skill, agent, or command to an existing plugin.
 - A skill's prose asserts a harness capability ("use the Task tool",
   "Codex can't spawn subagents") — see the drift guardrail below.
@@ -40,23 +42,21 @@ The reference documents are the forge's raw material. Read the one that
 applies; do not inline its content into a skill body (progressive disclosure
 — the skill's SKILL.md is a table of contents, not the whole book).
 
-| Document | What it governs | Read when |
-|---|---|---|
-| `references/claude-code-skills-agents-guidelines.md` | two-tier skill/agent architecture (v0.7) | forging any skill + agent pair |
-| `references/dependency-model.md` | the five dependency classes (D1–D5) | a skill has cross-references to other skills/agents/artifacts |
-| `references/harness-capability-matrix.md` | dated harness capabilities | a skill asserts what a harness can do |
+| Document | Role | What it governs | Read when |
+|---|---|---|---|
+| `references/claude-code-skills-agents-guidelines.md` | **primary** — the architecture to follow | two-tier skill/agent architecture (v0.7) | creating any multi-agent skill |
+| `references/dependency-model.md` | supplement | the five dependency classes (D1–D5) | a skill has cross-references to other skills/agents/artifacts |
+| `references/harness-capability-matrix.md` | supplement | dated harness capabilities | a skill asserts what a harness can do |
 
-The guidelines document is the canonical architecture; it is copied in
-verbatim from `synaptic-canvas/docs/`. Note: it uses the term "Task tool"
-throughout — that name is now `Agent` in Claude Code; the
-`harness-capability-matrix.md` reference is the current authority on harness
-naming and capability drift.
+The guidelines document is the canonical architecture; it is copied verbatim
+from `synaptic-canvas/docs/`. Note: it uses the term "Task tool" throughout —
+that name is now `Agent` in Claude Code; `harness-capability-matrix.md` is the
+current authority on harness naming and capability drift.
 
 ## The dependency model (summary)
 
-A skill with no dependencies is just files. The skills that break are the ones
-whose parts refer to each other — and to the world outside — in ways that
-drift. Five classes, each with one correct declaration site:
+A multi-agent skill's parts refer to each other — and to the world outside —
+in ways that drift. Five classes, each with one correct declaration site:
 
 | Class | Depends on | Declared in | Example |
 |---|---|---|---|
@@ -115,7 +115,7 @@ line — "read the canonical `skills/<n>/SKILL.md` completely and follow it" —
 with a relative path. Never fork the body across harnesses; forked bodies
 drift. (This repo's own `.cursor/skills/skill-forge/SKILL.md` is the example.)
 
-## Procedure — forge a skill
+## Procedure — forge a multi-agent skill
 
 1. **Classify dependencies first.** Walk the D1–D5 table; list every
    dependency before writing any body, and write each into its declaration

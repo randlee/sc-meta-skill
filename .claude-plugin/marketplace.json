@@ -1,14 +1,14 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "sc-meta-skill",
-  "description": "skill-forge: forge cross-agent skills and agents (Claude Code / Codex / Cursor / Hermes) from a curated reference library.",
+  "description": "skill-forge: create multi-agent skills following the skills/agents architecture (Claude Code / Codex / Cursor / Hermes), from a curated reference library.",
   "owner": {
     "name": "randlee"
   },
   "plugins": [
     {
       "name": "sc-meta-skill",
-      "description": "skill-forge: forge cross-agent skills and agents with explicit D1-D5 dependency contracts and a dated harness-capability matrix.",
+      "description": "skill-forge: create multi-agent skills following the skills/agents architecture, with the D1-D5 dependency model and a dated harness-capability matrix.",
       "author": {
         "name": "randlee"
       },

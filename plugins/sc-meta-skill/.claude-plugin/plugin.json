@@ -1,6 +1,6 @@
 {
   "name": "sc-meta-skill",
-  "description": "skill-forge: forge cross-agent skills and agents across Claude Code / Codex / Cursor / Hermes, from a curated reference library (dependency model + harness-capability matrix).",
+  "description": "skill-forge: create multi-agent skills following the skills/agents architecture, across Claude Code / Codex / Cursor / Hermes, from a curated reference library.",
   "version": "0.1.0",
   "author": {
     "name": "randlee",
@@ -13,6 +13,7 @@
     "skill-forge",
     "skills",
     "agents",
+    "multi-agent",
     "plugins",
     "marketplace",
     "cross-harness",

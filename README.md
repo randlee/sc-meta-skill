@@ -1,20 +1,22 @@
 # sc-meta-skill — skill-forge
 
-The single source of truth for **forging cross-agent skills and agents** that
-load across Claude Code, Codex, Cursor, and Hermes — and that land in
+The single source of truth for **multi-agent skill creation**: building skills
+that orchestrate one or more agents, following the skills/agents architecture
+copied from `synaptic-canvas`. Skills built here land in
 `synaptic-canvas-dolt` as versioned registry units.
 
-The primary skill is **`skill-forge`**: a curated forge whose `SKILL.md` is a
-table of contents over a reference library, so skills are built from canonical
-documents rather than re-derived each time.
+The primary skill is **`skill-forge`**: its `SKILL.md` is a table of contents
+over a reference library, anchored by the skills/agents architecture
+guidelines, so skills are built from canonical documents rather than re-derived
+each time.
 
 ## Reference library
 
-| Document | Governs |
-|---|---|
-| `skills/skill-forge/references/claude-code-skills-agents-guidelines.md` | two-tier skill/agent architecture (v0.7, copied verbatim) |
-| `skills/skill-forge/references/dependency-model.md` | the five dependency classes (D1–D5) |
-| `skills/skill-forge/references/harness-capability-matrix.md` | dated harness capabilities (drift guardrail) |
+| Document | Role | Governs |
+|---|---|---|
+| `skills/skill-forge/references/claude-code-skills-agents-guidelines.md` | **primary** | two-tier skill/agent architecture (v0.7, copied verbatim) |
+| `skills/skill-forge/references/dependency-model.md` | supplement | the five dependency classes (D1–D5) |
+| `skills/skill-forge/references/harness-capability-matrix.md` | supplement | dated harness capabilities (drift guardrail) |
 
 ## Structure
 

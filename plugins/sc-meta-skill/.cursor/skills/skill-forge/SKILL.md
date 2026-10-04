@@ -1,6 +1,6 @@
 ---
 name: skill-forge
-description: "Build cross-agent skills and agents from reference docs."
+description: "Create multi-agent skills from the architecture guidelines."
 ---
 
 # Skill Forge
