@@ -1,6 +1,6 @@
 {
   "name": "sc-meta-skill",
-  "description": "Author cross-harness marketplace plugins (Claude Code / Codex / Cursor / Hermes) with explicit dependency contracts and a dated harness-capability matrix.",
+  "description": "skill-forge: forge cross-agent skills and agents across Claude Code / Codex / Cursor / Hermes, from a curated reference library (dependency model + harness-capability matrix).",
   "version": "0.1.0",
   "author": {
     "name": "randlee",
@@ -10,10 +10,13 @@
   "license": "MIT",
   "homepage": "https://github.com/randlee/sc-meta-skill",
   "keywords": [
+    "skill-forge",
+    "skills",
+    "agents",
     "plugins",
     "marketplace",
-    "dependencies",
     "cross-harness",
+    "dependencies",
     "claude",
     "codex",
     "cursor",

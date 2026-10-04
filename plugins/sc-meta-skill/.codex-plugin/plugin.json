@@ -1,7 +1,7 @@
 {
   "name": "sc-meta-skill",
   "version": "0.1.0",
-  "description": "Author cross-harness marketplace plugins with explicit dependency contracts and a dated harness-capability matrix.",
+  "description": "skill-forge: forge cross-agent skills and agents across Claude Code / Codex / Cursor / Hermes, from a curated reference library.",
   "author": {
     "name": "randlee",
     "url": "https://github.com/randlee"
@@ -10,25 +10,25 @@
   "repository": "https://github.com/randlee/sc-meta-skill",
   "license": "MIT",
   "keywords": [
+    "skill-forge",
+    "skills",
+    "agents",
     "plugins",
     "marketplace",
-    "dependencies",
     "cross-harness",
-    "claude",
-    "codex",
-    "cursor"
+    "dependencies"
   ],
   "skills": "./skills/",
   "interface": {
-    "displayName": "Marketplace Plugin Authoring",
-    "shortDescription": "Author cross-harness plugins with dependency contracts.",
-    "longDescription": "Source of truth for building marketplace plugins for Claude Code, Codex, and Cursor. Declares the D1-D5 dependency model (skill, agent, artifact, binding, harness capability) and a dated harness-capability matrix so plugins never hardcode a stale harness assumption.",
+    "displayName": "Skill Forge",
+    "shortDescription": "Forge cross-agent skills and agents from a reference library.",
+    "longDescription": "Source of truth for forging skills and agents that load across Claude Code, Codex, Cursor, and Hermes. Provides access to a curated reference library: the v0.7 skills/agents architecture guidelines, the D1-D5 dependency model, and a dated harness-capability matrix so no skill ever hardcodes a stale harness assumption.",
     "developerName": "randlee",
     "category": "Developer Tools",
     "capabilities": ["Skills"],
     "websiteURL": "https://github.com/randlee/sc-meta-skill",
     "defaultPrompt": [
-      "Use marketplace-plugin-authoring to author a cross-harness marketplace plugin."
+      "Use skill-forge to forge a cross-agent skill or agent from the reference library."
     ],
     "brandColor": "#4F7CAC"
   }
