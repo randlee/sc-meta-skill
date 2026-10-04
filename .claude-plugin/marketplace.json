@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "sc-meta-skill",
-  "description": "The forge marketplace: skill-forge (multi-agent skill creation) + marketplace-forge (plugin packaging), for Claude Code / Codex / Cursor / Hermes.",
+  "description": "The forge marketplace: skill-forge (authoring), marketplace-forge (plugin packaging), npx-forge (npx distribution), for Claude Code / Codex / Cursor / Hermes.",
   "owner": {
     "name": "randlee"
   },
@@ -24,6 +24,16 @@
       },
       "category": "workflow",
       "source": "./plugins/marketplace-forge",
+      "homepage": "https://github.com/randlee/sc-meta-skill"
+    },
+    {
+      "name": "npx-forge",
+      "description": "Package skills as npx-installable packages: the npx loader model, scope flags, and per-agent target paths.",
+      "author": {
+        "name": "randlee"
+      },
+      "category": "workflow",
+      "source": "./plugins/npx-forge",
       "homepage": "https://github.com/randlee/sc-meta-skill"
     }
   ]

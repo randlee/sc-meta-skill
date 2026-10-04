@@ -1,0 +1,37 @@
+{
+  "name": "npx-forge",
+  "version": "0.1.0",
+  "description": "Package skills as npx-installable packages: the npx loader model, scope flags, and per-agent target paths.",
+  "author": {
+    "name": "randlee",
+    "url": "https://github.com/randlee"
+  },
+  "homepage": "https://github.com/randlee/sc-meta-skill",
+  "repository": "https://github.com/randlee/sc-meta-skill",
+  "license": "MIT",
+  "keywords": [
+    "npx-forge",
+    "npx",
+    "install",
+    "packaging",
+    "loader",
+    "claude",
+    "codex",
+    "cursor",
+    "hermes"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "npx Forge",
+    "shortDescription": "Package skills as npx-installable packages.",
+    "longDescription": "Source of truth for distributing skills via npx: the loader model where `npx skills add <url>` downloads a repository/URL containing a SKILL.md and installs it into the target agent's config path. Documents URL references, global vs local scope, and per-agent target paths for Claude Code, Cursor, Codex, and Hermes.",
+    "developerName": "randlee",
+    "category": "Developer Tools",
+    "capabilities": ["Skills"],
+    "websiteURL": "https://github.com/randlee/sc-meta-skill",
+    "defaultPrompt": [
+      "Use npx-forge to make a skill installable via npx."
+    ],
+    "brandColor": "#4F7CAC"
+  }
+}

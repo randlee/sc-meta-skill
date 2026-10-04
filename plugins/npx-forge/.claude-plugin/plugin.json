@@ -1,0 +1,24 @@
+{
+  "name": "npx-forge",
+  "description": "Package skills as npx-installable packages: the npx loader model, scope flags, and per-agent target paths.",
+  "version": "0.1.0",
+  "author": {
+    "name": "randlee",
+    "url": "https://github.com/randlee"
+  },
+  "repository": "https://github.com/randlee/sc-meta-skill",
+  "license": "MIT",
+  "homepage": "https://github.com/randlee/sc-meta-skill",
+  "keywords": [
+    "npx-forge",
+    "npx",
+    "install",
+    "packaging",
+    "loader",
+    "claude",
+    "codex",
+    "cursor",
+    "hermes"
+  ],
+  "skills": "./skills/"
+}
